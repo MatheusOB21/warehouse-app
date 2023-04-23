@@ -48,11 +48,15 @@ describe 'Usuario cadastra um galpão' do
         click_on 'Cadastrar Galpão'
         fill_in 'Nome', with: ''
         fill_in 'Descrição', with: ''
+        fill_in 'Código', with: 'RJN'
+        fill_in 'Cidade', with: 'Rio de Janeiro'
         fill_in 'Endereço', with: 'Avenida Das Palmeiras, 2000'
         fill_in 'CEP', with: '61000-000'
         fill_in 'Área', with: '32000'
         click_on 'Enviar'
         #Assert 
         expect(page).to have_content 'Galpão não cadastrado!'
+        expect(page).to have_content "Nome não pode ficar em branco"
+        expect(page).to have_content "Descrição não pode ficar em branco"
     end
 end

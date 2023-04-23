@@ -1,0 +1,14 @@
+<h2>Editar galpão:<h2>
+
+<div>
+    <% if(@warehouse.errors.any?) %>
+    <p>Veja os erros ao atualizar: </p>
+    <ul>
+      <% @warehouse.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+    <% end %>
+<div>
+
+ <%= render 'form' %>

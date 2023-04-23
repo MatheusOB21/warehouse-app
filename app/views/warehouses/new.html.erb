@@ -1,36 +1,12 @@
 <h1>Novo galpão</h1>
-<div>
-    <%= form_with(model: @warehouse) do |form| %>
-        <div>
-            <%= form.label :name, 'Nome' %>
-            <%= form.text_field :name %>
-        </div>
-        <div>
-            <%= form.label :description, 'Descrição' %>
-            <%= form.text_area :description %>
-        </div>
-        <div>
-            <%= form.label :code, 'Código' %>
-            <%= form.text_field :code %>
-        </div>
-        <div>
-            <%= form.label :adress, 'Endereço' %>
-            <%= form.text_field :adress %>
-        </div>
-        <div>
-            <%= form.label :city, 'Cidade' %>
-            <%= form.text_field :city %>
-        </div>
-        <div>
-            <%= form.label :cep, 'CEP' %>
-            <%= form.text_field :cep %>
-        </div>
-        <div>
-            <%= form.label :area, 'Área' %>
-            <%= form.number_field :area %>
-        </div>
-        <div>
-            <%= form.submit 'Enviar' %>
-        </div>
-    <% end %>
-</div>
+
+<% if(@warehouse.errors.any?) %>
+    <p>Veja os erros ao cadastrar: </p>
+    <ul>
+      <% @warehouse.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+<% end %>
+
+<%= render 'form' %>
