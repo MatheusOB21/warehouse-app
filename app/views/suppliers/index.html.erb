@@ -10,12 +10,12 @@
               <th>Nome</th>
               <th>Localização</th>
             </tr>
-          <thead>
+          </thead>
           <tbody>
           <% @supplier.each do |s| %>
             <tr>
-              <td><%= link_to s.brand_name, s%></td>
-              <td><%= s.city %> - <%= s.state %></td>
+              <td> <%= link_to s.brand_name, s%> </td>
+              <td> <%= s.city %> - <%= s.state %> </td>
             </tr>
           <% end %>
           </tbody>

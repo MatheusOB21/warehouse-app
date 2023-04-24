@@ -3,7 +3,7 @@ require "rails_helper"
 describe 'Usuário consegue ver os detalhes de um fornecedor' do
     it 'com sucesso' do
       #Arrange
-      Supplier.create!(corporate_name: "Apple .Inc", brand_name: "Apple", registration_number:"90256745611345", full_address: "Rua Law, 256", city: "São Paulo", state: "SP", email: "contato@apple.com.br")
+      Supplier.create!(corporate_name: "Apple Inc.", brand_name: "Apple", registration_number:"90256745611345", full_address: "Rua Law, 256", city: "São Paulo", state: "SP", email: "contato@apple.com.br")
       
       #Act
       visit root_path
@@ -11,7 +11,7 @@ describe 'Usuário consegue ver os detalhes de um fornecedor' do
       click_on 'Apple'
       
       #Assert
-      expect(page).to have_content('Fornecedor: Apple .Inc')
+      expect(page).to have_content('Fornecedor: Apple Inc.')
       expect(page).to have_content('Razão: Apple')
       expect(page).to have_content('CNPJ: 90256745611345')
       expect(page).to have_content('Endereço: Rua Law, 256')

@@ -1,0 +1,13 @@
+<h1>Editar Fornecedor:<%= @supplier.brand_name %></h1>
+
+<div id="supplier-errors-messages">
+    <% if @supplier.errors.any? %>
+    <ul>
+      <%@supplier.errors.full_messages.each do |msg|%>
+        <li><%= msg %></li>
+      <% end %>
+    <ul>
+    <% end %>
+</div>
+
+<%= render "form" %>
