@@ -1,0 +1,24 @@
+<section id = "supplier-details">
+    <div>
+        <h1>Fornecedor: <%= @supplier.corporate_name %></h1>
+        <h2>Razão: <%= @supplier.brand_name %></h2>
+    </div>
+    <div>
+        <dl>
+            <dt><strong>CNPJ: <strong><dt>
+                <dd><%= @supplier.registration_number %><dd>
+            <dt><strong>Endereço: <strong><dt>
+                <dd><%= @supplier.full_address %><dd>
+            <dt><strong>Cidade: <strong><dt>
+                <dd><%= @supplier.city %><dd>
+            <dt><strong>Estado: <strong><dt>
+                <dd><%= @supplier.state %><dd>
+            <dt><strong>Email: <strong><dt>
+                <dd><%= @supplier.email %><dd>
+        <dl> 
+    </div>
+
+    <div>
+        <%= link_to "Voltar", suppliers_path %>
+    </div>
+</section>
