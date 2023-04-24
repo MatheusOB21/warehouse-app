@@ -1,5 +1,6 @@
 <h1>Novo galpão</h1>
 
+<div id="warehouse-errors-messages">
 <% if(@warehouse.errors.any?) %>
     <p>Veja os erros ao cadastrar: </p>
     <ul>
@@ -8,5 +9,6 @@
       <% end %>
     </ul>
 <% end %>
+</div>
 
 <%= render 'form' %>

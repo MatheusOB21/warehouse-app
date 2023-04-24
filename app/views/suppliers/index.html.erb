@@ -1,5 +1,8 @@
 <section id="suppliers">
     <h1>Fornecedores:<h1>
+    <div>
+        <%= link_to 'Cadastrar novo fornecedor', new_supplier_path %>
+    </div>
       <% if @supplier.any? %>
         <table>
           <thead>
@@ -11,7 +14,7 @@
           <tbody>
           <% @supplier.each do |s| %>
             <tr>
-              <td><%= link_to s.brand_name, supplier_path(s.id) %></td>
+              <td><%= link_to s.brand_name, s%></td>
               <td><%= s.city %> - <%= s.state %></td>
             </tr>
           <% end %>

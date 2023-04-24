@@ -60,14 +60,14 @@ RSpec.describe Warehouse, type: :model do
       end
     end
     
-    it 'false whe code is already in use' do
+    it 'false when code is already in use' do
     #Arrange
-      warehouse1 = Warehouse.create(name: 'Rio de Amarelho', code: 'RIO', adress: 'Endereço', cep: '24000-000', city: 'Rio', area: 1000, description: 'Alguma coisa')
+      warehouse1 = Warehouse.create!(name: 'Rio de Amarelho', code: 'RIO', adress: 'Endereço', cep: '24000-000', city: 'Rio', area: 1000, description: 'Alguma coisa')
       warehouse2 = Warehouse.new(name: 'São Paulinho', code: 'RIO', adress: 'Rua', cep: '62000-000', city: 'São Paulo', area: 2000, description: 'Alguma coisa de novo')
     #Act
       result = warehouse2.valid?
     #Assert
-    expect(result).to eq(false)
+      expect(result).to eq(false)
     end
 
   end
