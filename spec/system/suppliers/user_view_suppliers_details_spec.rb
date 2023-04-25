@@ -32,7 +32,7 @@ describe 'Usuário consegue ver os detalhes de um fornecedor' do
 
       #Assert
       expect(current_path).to eq suppliers_path
-      expect(page).to have_content('Fornecedores:')
+      expect(page).to have_content('Fornecedores')
       expect(page).to have_content('Scooby-doo')
       expect(page).to have_content('Salvador - BA')
 

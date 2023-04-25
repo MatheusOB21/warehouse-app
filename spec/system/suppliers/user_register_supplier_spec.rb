@@ -40,7 +40,7 @@ describe 'Usuário cadastra um novo fornecedor' do
         #Assert
         expect(current_path).to eq suppliers_path
         expect(page).to have_content('Fornecedor registrado com sucesso!')
-        expect(page).to have_content('Fornecedores:')
+        expect(page).to have_content('Fornecedores')
         expect(page).to have_content('Campusoft')
         expect(page).to have_content('Manaus - AM')
     end

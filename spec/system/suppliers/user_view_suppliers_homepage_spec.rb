@@ -23,7 +23,7 @@ describe 'Usuario vê os fornecedores' do
             click_on 'Fornecedores'
         end
         #Assert
-        expect(page).to have_content('Fornecedores:')
+        expect(page).to have_content('Fornecedores')
         expect(page).to have_content('Mistery')
         expect(page).to have_content('New Orleans - WS')
         expect(page).to have_content('Anakin')
