@@ -62,11 +62,21 @@ RSpec.describe Warehouse, type: :model do
     
     it 'false when code is already in use' do
     #Arrange
-      warehouse1 = Warehouse.create!(name: 'Rio de Amarelho', code: 'RIO', adress: 'Endereço', cep: '24000-000', city: 'Rio', area: 1000, description: 'Alguma coisa')
-      warehouse2 = Warehouse.new(name: 'São Paulinho', code: 'RIO', adress: 'Rua', cep: '62000-000', city: 'São Paulo', area: 2000, description: 'Alguma coisa de novo')
+      warehouse1 = Warehouse.create!(name: 'Rio de Amarelho', code: 'RIO', adress: 'Rua Capixaba, 50000', cep: '24000-000', city: 'Rio', area: 1000, description: 'Alguma coisa')
+      warehouse2 = Warehouse.new(name: 'São Paulinho', code: 'RIO', adress: 'Rua Amazonas, 3000', cep: '62000-000', city: 'São Paulo', area: 2000, description: 'Alguma coisa de novo')
     #Act
       result = warehouse2.valid?
     #Assert
+      expect(result).to eq(false)
+    end
+
+    it 'false when cep is invalid format' do
+      #Arrange
+      warehouse1 = Warehouse.create!(name: 'Rio de Amarelho', code: 'RIO', adress: 'Rua Aline, 2000', cep: '24000-000', city: 'Rio', area: 1000, description: 'Alguma coisa')
+      warehouse2 = Warehouse.new(name: 'São Paulinho', code: 'SAO', adress: 'Rua Fulano, 2000', cep: '6200-0000', city: 'São Paulo', area: 2000, description: 'Alguma coisa de novo')
+      #Act
+      result = warehouse2.valid?
+      #Assert
       expect(result).to eq(false)
     end
 
