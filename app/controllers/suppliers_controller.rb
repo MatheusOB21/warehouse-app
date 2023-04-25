@@ -16,7 +16,7 @@ class SuppliersController < ApplicationController
     def create
         @supplier = Supplier.new(supplier_params)
         if @supplier.save 
-          redirect_to suppliers_path, notice: "Fornecedor registado com sucesso!"
+          redirect_to suppliers_path, notice: "Fornecedor registrado com sucesso!"
         else
           flash[:notice] = "Fornecedor não cadastrado!"
           render 'new'
