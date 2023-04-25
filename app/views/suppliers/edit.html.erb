@@ -1,12 +1,13 @@
-<h1>Editar Fornecedor:<%= @supplier.brand_name %></h1>
+<h2>Editar Fornecedor:<%= @supplier.brand_name %></h2>
 
 <div id="supplier-errors-messages">
     <% if @supplier.errors.any? %>
+    <p>Veja os erros ao atualizar:</p>
     <ul>
-      <%@supplier.errors.full_messages.each do |msg|%>
+      <% @supplier.errors.full_messages.each do |msg|%>
         <li><%= msg %></li>
       <% end %>
-    <ul>
+    </ul>
     <% end %>
 </div>
 

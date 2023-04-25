@@ -2,6 +2,7 @@
 
 <div id="supplier-errors-messages">
     <% if @supplier.errors.any? %>
+    <p>Veja os erros ao cadastrar: </p>
     <ul>
       <%@supplier.errors.full_messages.each do |msg|%>
         <li><%= msg %></li>
