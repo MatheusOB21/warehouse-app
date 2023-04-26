@@ -1,0 +1,33 @@
+<h1>Cadastrar novo modelo de produto</h1>
+
+<%= form_with(model: @product_model) do |form| %>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  <div>
+    <%= form.label :weight %>
+    <%= form.text_field :weight %>
+  </div>
+  <div>
+    <%= form.label :height %>
+    <%= form.text_field :height %>
+  </div>
+  <div>
+    <%= form.label :width %>
+    <%= form.text_field :width %>
+  </div>
+  <div>
+    <%= form.label :depth %>
+    <%= form.text_field :depth %>
+  </div>
+  <div>
+    <%= form.label :sku %>
+    <%= form.text_field :sku %>
+  </div>
+  <div>
+    <%= form.label :supplier_id %>
+    <%= form.collection_select :supplier_id, @suppliers, :id, :brand_name %>
+  </div>
+  <%= form.submit 'Enviar'%>
+<% end %>

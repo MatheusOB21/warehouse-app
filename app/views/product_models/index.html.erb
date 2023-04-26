@@ -1,14 +1,19 @@
 <section id="product-models">
     <h1>Modelo de Produto<h1>
-    
-    <% if @product_models.any? %>
 
-      <div id="suppliers-list">
+    <div id="new-product-models">
+    <%= link_to "Cadastrar novo modelo", new_product_model_path %>
+    </div>
+    
+    <br>
+    <% if @product_models.any? %>
+      <div id="product-model-list">
         <table>
           <thead>
             <tr>
               <th>Nome</th>
-                <th>SKU</th>
+              <th>SKU</th>
+              <th>Fornecedor</th>
               </tr>
           </thead>
           <tbody>
@@ -21,9 +26,10 @@
             <% end %>
           </tbody>
         </table>
-     
      <% else %>
         <h2>Nenhum modelo de produto cadastrado</h2> 
-     
      <% end %>
+     </div>
+    
+
 </section>

@@ -4,11 +4,11 @@
     <div id="new-supplier">
         <%= link_to 'Cadastrar novo fornecedor', new_supplier_path %>
     </div>
-    
     <br>
+    
+    <% if @supplier.any? %>
     <div id="suppliers-list">
-      <% if @supplier.any? %>
-        <table>
+      <table>
           <thead>
             <tr>
               <th>Nome</th>
@@ -25,9 +25,9 @@
           </tbody>
         </table>
       <% else %>
-        <h2>Não existem fornecedores cadastrados!</h2>
+        <h2>Não existem fornecedores cadastrados</h2>
       <% end %>
       </div>
-      <br>
+      
 
 </section>
