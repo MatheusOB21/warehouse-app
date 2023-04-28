@@ -3,8 +3,11 @@ require 'rails_helper'
 describe 'Usuário consegue editar o fornecedor' do
     it 'a partir da view fornecedores' do
         #Arrange
+          user = User.create!(name: 'admin', email: 'admin@gmail.com', password:'admin12345') 
+
           Supplier.create!(corporate_name: "Junior Inc.", brand_name: "Junior Clothes", registration_number:"17814512345786", full_address: "Rua Rosa, 143", city: "Rio de Janeiro", state: "RJ", email: "contato@junior.com.br")
         #Act
+          login_as(user)
           visit root_path
           click_on "Fornecedores"
           click_on "Junior Clothes"
@@ -20,8 +23,11 @@ describe 'Usuário consegue editar o fornecedor' do
     end
     it 'com sucesso' do
         #Arrange
+          user = User.create!(name: 'admin', email: 'admin@gmail.com', password:'admin12345') 
+
           supplier = Supplier.create!(corporate_name: "Junior Inc.", brand_name: "Junior Clothes", registration_number:"17814512345786", full_address: "Rua Rosa, 143", city: "Rio de Janeiro", state: "RJ", email: "contato@junior.com.br")
         #Act
+          login_as(user)
           visit root_path
           click_on "Fornecedores"
           click_on "Junior Clothes"
@@ -42,8 +48,11 @@ describe 'Usuário consegue editar o fornecedor' do
 
     it 'sem sucesso' do
       #Arrange
+        user = User.create!(name: 'admin', email: 'admin@gmail.com', password:'admin12345') 
+
         supplier = Supplier.create!(corporate_name: "Junior Inc.", brand_name: "Junior Clothes", registration_number:"17814512345786", full_address: "Rua Rosa, 143", city: "Rio de Janeiro", state: "RJ", email: "contato@junior.com.br")
       #Act
+        login_as(user)
         visit root_path
         click_on "Fornecedores"
         click_on "Junior Clothes"

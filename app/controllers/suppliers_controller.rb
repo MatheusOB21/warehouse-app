@@ -1,6 +1,8 @@
 class SuppliersController < ApplicationController
     before_action :set_supplier, only: [:show, :edit, :update]
     
+    before_action :authenticate_user!, only: [:index, :show, :new, :edit]
+    
     def index
         @supplier = Supplier.all
     end

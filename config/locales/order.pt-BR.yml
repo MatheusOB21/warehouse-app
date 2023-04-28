@@ -1,0 +1,10 @@
+pt-BR:
+  activerecord:
+    models:
+      user: "Pedido"
+    attributes:
+      order:
+        warehouse_id: "Galpão"  
+        supplier_id: "Fornecedor"
+        user_id: "Usuário"
+        date_delivery: "Data de entrega"

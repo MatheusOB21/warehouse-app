@@ -1,5 +1,11 @@
 <h1>Cadastrar novo modelo de produto</h1>
 
+<% if @product_model.errors.any? %>
+  <% @product_model.errors.full_messages do |msg|%>
+    <%= msg %>
+  <% end %>
+<% end %>
+
 <%= form_with(model: @product_model) do |form| %>
   <div>
     <%= form.label :name %>
@@ -28,6 +34,6 @@
   <div>
     <%= form.label :supplier_id %>
     <%= form.collection_select :supplier_id, @suppliers, :id, :brand_name %>
-  </div>
-  <%= form.submit 'Enviar'%>
+  </div id="button">
+  <%= form.submit 'Enviar' %>
 <% end %>

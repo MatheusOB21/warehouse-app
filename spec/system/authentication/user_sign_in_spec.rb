@@ -20,6 +20,7 @@ describe 'Usuário se autentica' do
         end
         expect(page).to have_content 'Login efetuado com sucesso.'
     end
+    
     it 'com login e senha incorretos' do
         #Arrange
         User.create!(email: 'matheus@gmail.com', password: 'senha1234')
@@ -39,6 +40,7 @@ describe 'Usuário se autentica' do
         end
         expect(page).to have_content 'E-mail ou senha inválidos.'
     end
+    
     it 'e faz logout' do
         #Arrange
         User.create!(email: 'matheus@gmail.com', password: 'senha1234')

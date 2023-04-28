@@ -1,0 +1,21 @@
+<h1>Cadastrar um novo pedido</h1>
+
+<div id="new-order">
+  <%= form_with(model: @order) do |f| %>
+    <div>
+      <%= f.label :warehouse_id %>
+      <%= f.collection_select :warehouse_id, @warehouse, :id, :name %>
+    </div>
+    <div>
+      <%= f.label :supplier_id %>
+      <%= f.collection_select  :supplier_id, @supplier, :id, :corporate_name %>
+    </div>
+    <div>
+      <%= f.label :date_delivery %>
+      <%= f.date_field :date_delivery %>
+    </div>
+    <div id="button">
+      <%= f.submit 'Enviar'  %>
+    </div>
+  <% end %>
+</div>
