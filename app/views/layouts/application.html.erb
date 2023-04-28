@@ -11,13 +11,18 @@
 
   <body>
   <header>
-    <h1><%= link_to "Galpões & Estoque", root_path %></h1>
+    <%= link_to root_path do %>
+      <h1>Galpões & Estoque</h1>
+    <% end %>
   </header>
   <nav>
     <% if user_signed_in? %>
-      <p>|<%= current_user.email %>|
-      <%= button_to "Sair", destroy_user_session_path, method: :delete %>
+    <div>
+      <p>
+        <%= button_to "Sair", destroy_user_session_path, method: :delete %>
+        <%= current_user.user_and_email %>
       </p>
+    </div>
     <% else %>
       <%= link_to "Entrar", new_user_session_path %>
     <% end %>

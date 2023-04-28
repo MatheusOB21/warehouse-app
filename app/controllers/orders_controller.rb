@@ -15,10 +15,15 @@ class OrdersController < ApplicationController
    
     if @order.save
       redirect_to @order, notice: "Pedido feito com sucesso"
+    else
+      @warehouse = Warehouse.all
+      @supplier = Supplier.all
+      render 'new'
     end
   end
 
   def show
     @order = Order.find(params[:id])
   end
+  
 end

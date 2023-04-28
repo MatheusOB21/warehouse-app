@@ -4,7 +4,12 @@ pt-BR:
       user: "Pedido"
     attributes:
       order:
-        warehouse_id: "Galpão"  
-        supplier_id: "Fornecedor"
-        user_id: "Usuário"
+        warehouse_id: "Galpão destino"  
+        warehouse: "Galpão"  
+        supplier_id: "Fornecedor responsável"
+        supplier: "Fornecedor"
+        user_id: "Usuário responsável"
+        user: "Usuário"
+        user_email: "Email do responsável"
         date_delivery: "Data de entrega"
+        code: "Número do pedido"

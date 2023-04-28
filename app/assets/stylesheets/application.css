@@ -15,12 +15,41 @@
  */
 
 
- /* warehouse-new */
-input {
+ /* form */
+ /* homepage */
+ nav div form button {
+    float: left;
+    margin-right: 5px;
+ }
+  /* warehouse */
+#new-warehouse input {
     display: block;
-    width: 200px;
+    margin-bottom: 5px;
 }
-
+ /* supplier */
+#new-supplier input {
+    display: block;
+    margin-bottom: 5px
+}
+ /* product_model */
+#new-product_model input {
+    display: block;
+    margin-bottom: 5px
+}
+#new-product_model div {
+    display: block;
+    margin-bottom: 5px
+}
+ /* order */
+#new-order input {
+    display: block;
+    margin-bottom: 5px
+}
+#new-order div {
+    display: block;
+    margin-bottom: 5px
+}
+ /* button */
 #button input{
     display: block;
     width: 50px;

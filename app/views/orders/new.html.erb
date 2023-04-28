@@ -1,10 +1,20 @@
 <h1>Cadastrar um novo pedido</h1>
 
+<div id="order-errors-messages">
+  <% if @order.errors.any? %>
+    <ul>
+      <% @order.errors.full_messages.each do|msg|%>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
+
 <div id="new-order">
   <%= form_with(model: @order) do |f| %>
     <div>
       <%= f.label :warehouse_id %>
-      <%= f.collection_select :warehouse_id, @warehouse, :id, :name %>
+      <%= f.collection_select :warehouse_id, @warehouse, :id, :description_full %>
     </div>
     <div>
       <%= f.label :supplier_id %>

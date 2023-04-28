@@ -1,17 +1,19 @@
-<h1>Pedido</h1>
+<h1> <%= Order.model_name.human %> </h1>
 
 <section id="order-details">
   <div>
     <dl>
-      <dt><strong>Fornecedor: <strong><dt>
+      <dt><strong><%= Order.human_attribute_name(:supplier_id)%>: <strong><dt>
         <dd><%= @order.supplier.corporate_name %><dd>
-      <dt><strong>Galpão destinado: <strong><dt>
-        <dd><%= @order.warehouse.name %><dd>
-      <dt><strong>Usuário responsável: <strong><dt>
+      <dt><strong><%= Order.human_attribute_name(:code)%>: <strong><dt>
+        <dd><%= @order.code %><dd>
+      <dt><strong><%= Order.human_attribute_name(:warehouse_id)%>: <strong><dt>
+        <dd><%= @order.warehouse.description_full %><dd>
+      <dt><strong><%= Order.human_attribute_name(:user_id) %>: <strong><dt>
         <dd><%= @order.user.name %><dd>
-      <dt><strong>Email do responsável: <strong><dt>
+      <dt><strong><%= Order.human_attribute_name(:user_email) %>: <strong><dt>
         <dd><%= "<#{@order.user.email}>" %><dd>
-      <dt><strong>Data para entrega: <strong><dt>
+      <dt><strong><%= Order.human_attribute_name(:date_delivery) %>: <strong><dt>
         <dd><%= I18n.localize(@order.date_delivery) %><dd>
      <dl> 
   </div>

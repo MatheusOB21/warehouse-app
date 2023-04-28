@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_27_213235) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_28_142553) do
+  create_table "add_code_to_orders", force: :cascade do |t|
+    t.integer "code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "orders", force: :cascade do |t|
     t.integer "warehouse_id", null: false
     t.integer "supplier_id", null: false
@@ -18,6 +24,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_27_213235) do
     t.date "date_delivery"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "code"
     t.index ["supplier_id"], name: "index_orders_on_supplier_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
     t.index ["warehouse_id"], name: "index_orders_on_warehouse_id"

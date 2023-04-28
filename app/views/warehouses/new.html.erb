@@ -1,14 +1,14 @@
 <h1>Novo galpão</h1>
 
 <div id="warehouse-errors-messages">
-<% if(@warehouse.errors.any?) %>
+  <% if(@warehouse.errors.any?) %>
     <p>Veja os erros ao cadastrar: </p>
     <ul>
       <% @warehouse.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
     </ul>
-<% end %>
+  <% end %>
 </div>
 
 <%= render 'form' %>
