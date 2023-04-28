@@ -4,7 +4,9 @@ describe 'Usuário deleta um warehouse' do
     it 'com sucesso' do
     #Arrange
       Warehouse.create!(name: 'Pernambuco Gate', code: 'RGT', city: 'Pernambuco', area: 60_000, adress: "Travessa São José, 2500", cep: '61000-000', description: 'Galpão de Pernambuco')
+      user = User.create!(name: 'Jose', email: 'jose@gmail.com', password: '123456789')
     #Act
+      login_as(user)
       visit root_path
       click_on 'Pernambuco Gate'
       click_on 'Remover'
@@ -17,9 +19,11 @@ describe 'Usuário deleta um warehouse' do
     
     it 'e não apaga outros galpões'  do
     #Arrange
+      user = User.create!(name: 'Jose', email: 'jose@gmail.com', password: '123456789')
       first_w = Warehouse.create!(name: 'Pernambuco Gate', code: 'PGT', city: 'Pernambuco', area: 60_000, adress: "Travessa São José, 2500", cep: '61000-000', description: 'Galpão de Pernambuco')
       second_w = Warehouse.create!(name: 'Recife Gate', code: 'RTT', city: 'Arcoverde', area: 40_000, adress: "Travessa Cuba, 1500", cep: '61200-000', description: 'Galpão dde Recife, no porto')
     #Act
+      login_as(user)
       visit root_path
       click_on 'Pernambuco Gate'
       click_on 'Remover'

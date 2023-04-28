@@ -4,7 +4,9 @@ describe 'Usuário edita um galpão' do
     it 'a partir da tela detalhes' do
         #Arrange
         Warehouse.create!(name: 'Rio Gate', code: 'SDU', city: 'Rio de Janeiro', area: 60_000, adress: "Avenida das Palmeiras, 2500", cep: '61000-000', description: 'Galpão do Rio de Janeiro')
+        user = User.create!(name: 'Jose', email: 'jose@gmail.com', password: '123456789')
         #Act
+        login_as(user)
         visit root_path
         click_on 'Rio Gate'
         click_on 'Editar'
@@ -28,8 +30,10 @@ describe 'Usuário edita um galpão' do
     it 'com sucesso' do
      #Arrange
      Warehouse.create!(name: 'Rio Gate', code: 'SDU', city: 'Rio de Janeiro', area: 60_000, adress: "Avenida das Palmeiras, 2500", cep: '61000-000', description: 'Galpão do Rio de Janeiro')
-     
+     user = User.create!(name: 'Jose', email: 'jose@gmail.com', password: '123456789')
+
      #Act
+     login_as(user)
      visit root_path
      click_on 'Rio Gate'
      click_on 'Editar'
@@ -48,8 +52,9 @@ describe 'Usuário edita um galpão' do
     it 'sem sucesso' do
      #Arrange
      Warehouse.create!(name: 'Rio Gate', code: 'SDU', city: 'Rio de Janeiro', area: 60_000, adress: "Avenida das Palmeiras, 2500", cep: '61000-000', description: 'Galpão do Rio de Janeiro')
-     
+     user = User.create!(name: 'Jose', email: 'jose@gmail.com', password: '123456789')
      #Act
+     login_as(user)
      visit root_path
      click_on 'Rio Gate'
      click_on 'Editar'

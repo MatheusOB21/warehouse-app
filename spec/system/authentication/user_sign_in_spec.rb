@@ -10,7 +10,7 @@ describe 'Usuário se autentica' do
         within('form') do
             fill_in 'E-mail', with:'matheus@gmail.com'
             fill_in 'Senha', with: 'senha1234'
-            click_on 'Entrar'
+            click_on 'Login'
         end
         #Assert
         expect(page).not_to have_link 'Entrar'
@@ -30,7 +30,7 @@ describe 'Usuário se autentica' do
         within('form') do
             fill_in 'E-mail', with:'matheus@gmail.com'
             fill_in 'Senha', with: 'senha123456789'
-            click_on 'Entrar'
+            click_on 'Login'
         end
         #Assert
         expect(page).to have_link 'Entrar'
@@ -50,7 +50,7 @@ describe 'Usuário se autentica' do
         within('form') do
             fill_in 'E-mail', with:'matheus@gmail.com'
             fill_in 'Senha', with: 'senha1234'
-            click_on 'Entrar'
+            click_on 'Login'
         end
         click_on 'Sair'
         #Assert
