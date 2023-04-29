@@ -1,2 +1,5 @@
 pt-BR:
   name: "Nome"
+  found:
+    one: "encontrado"
+    other: "encontrados"

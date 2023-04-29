@@ -1,5 +1,9 @@
 class OrdersController < ApplicationController
-  before_action :authenticate_user!, only:[:show, :new] 
+  before_action :authenticate_user!
+
+  def index
+    @orders = current_user.orders
+  end
 
   def new
     @warehouse = Warehouse.all
@@ -24,6 +28,12 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+  end
+
+  def search
+    @code = params["query"]
+    @orders = Order.where("code LIKE ?", "%#{@code}%")
+
   end
   
 end

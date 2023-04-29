@@ -1,0 +1,22 @@
+<h1>Resultados da busca de: <%= @code %></h1>
+
+<h2><%= Order.model_name.human(count: @orders.count)%> <%= I18n.t(:found, count: @orders.count)%>: <%= @orders.count%></h2>
+
+
+<% if @orders.present? %>
+
+<div id="result-order-serach">
+  <% @orders.each do |order|%>
+    <dl>
+      <dt><strong><%= Order.human_attribute_name(:code) %>:</strong></dt>
+      <dd><%= order.code %></dd>
+      <dt><strong><%= Order.human_attribute_name(:warehouse_id) %>:</strong></dt>
+      <dd><%= order.warehouse.description_full %></dd>
+      <dt><strong><%= Order.human_attribute_name(:supplier_id) %>:</strong></dt>
+      <dd><%= order.supplier.corporate_name %></dd>  
+    </dl>
+  <% end %>  
+<% else %>
+  <h2>Nenhum pedido encontrado com o código: <%= @code %> </h2>
+</div>
+<% end %>

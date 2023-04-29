@@ -21,6 +21,10 @@
     float: left;
     margin-right: 5px;
  }
+ nav div form {
+    float: left;
+    margin-right: 10px;
+}
   /* warehouse */
 #new-warehouse input {
     display: block;
