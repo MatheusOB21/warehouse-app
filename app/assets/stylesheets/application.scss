@@ -45,12 +45,16 @@ header nav div a{
     margin-left: 0px;
     padding-left: 0;
  }
+ html body header nav.navbar.navbar-light.bg-light a{
+    margin-right: 10px;
+ }
+
  html body header nav div form{
     float: left;
  }
  html body header nav.navbar.navbar-light.bg-light div.form-inline form{
     margin-right: 0px;
-    margin-left: 270px;
+    margin-left: 200px;
  }
 
   /* warehouse */
