@@ -31,7 +31,7 @@ class SuppliersController < ApplicationController
 
     def update
       if @supplier.update(supplier_params) 
-        redirect_to supplier_path(@supplier.id), notice: "Fornecedor atualizado com sucesso!"
+        redirect_to @supplier, notice: "Fornecedor atualizado com sucesso!"
       else
         flash[:notice] = "Fornecedor não atualizado!"
         render 'edit'

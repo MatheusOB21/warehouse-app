@@ -3,6 +3,8 @@ class Order < ApplicationRecord
   belongs_to :supplier
   belongs_to :user
 
+  enum :status, pending: 0, delivered: 1, canceled: 2
+
   validates :code, :date_delivery, presence: true
 
   before_validation :generate_code

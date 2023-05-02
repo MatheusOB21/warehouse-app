@@ -5,7 +5,7 @@
 
 <% if @orders.present? %>
 
-<div id="result-order-serach">
+<div id="result-order-search">
   <% @orders.each do |order|%>
     <dl>
       <dt><strong><%= Order.human_attribute_name(:code) %>:</strong></dt>

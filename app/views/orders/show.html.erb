@@ -1,4 +1,4 @@
-<h1> <%= Order.model_name.human %></h1>
+<h1><%= I18n.t(:detail, count: 1)%> <%= I18n.t(:of, count: 1)%> <%= Order.model_name.human %>:</h1>
 
 <section id="order-details">
   <div>
@@ -15,6 +15,18 @@
         <dd><%= "<#{@order.user.email}>" %><dd>
       <dt><strong><%= Order.human_attribute_name(:date_delivery) %>: <strong><dt>
         <dd><%= I18n.localize(@order.date_delivery) %><dd>
+      <dt><strong><%= Order.human_attribute_name(:status) %>: <strong><dt>
+        <dd><%= I18n.translate(@order.status) %><dd>
      <dl> 
   </div>
+  
+  <% if @order.pending? %>
+    <div id = "status-button">
+      <%= button_to "Pedido recebido", delivered_order_path(@order.id) %>
+      <%= button_to "Pedido cancelado", canceled_order_path(@order.id) %>
+    </div>
+  <% end %>
+
 </section>
+
+<%= link_to "Editar", edit_order_path(@order) %>

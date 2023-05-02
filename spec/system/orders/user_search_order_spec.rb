@@ -31,7 +31,7 @@ describe 'Usuário busca por pedido' do
 
   end
 
-  it 'e encontra um' do
+  it 'e encontra apenas um' do
     #Arrange
      user = User.create!(name: 'Matheus', email: 'matheuzin@gmail.com', password: 'senha_padrao')
      warehouse = Warehouse.create!(name: 'Rio Gate', code: 'RDU', city: 'Rio de Janeiro', area: 60_000, adress: "Avenida das Palmeiras, 2500", cep: '61000-000', description: 'Galpão do Rio de Janeiro')
@@ -46,14 +46,13 @@ describe 'Usuário busca por pedido' do
       click_on 'Buscar'
     
     #Assert
-      expect(page).to have_content ("Resultados da busca de: #{order.code}")
-      expect(page).to have_content ('Pedido encontrado: 1')
+      expect(current_path).to eq order_path(order.id)
       expect(page).to have_content ("Número do pedido: #{order.code}")
       expect(page).to have_content ("Galpão destino: RDU - Rio Gate")
       expect(page).to have_content ("Fornecedor responsável: Mistery Inc")
    end
   
-   it 'e encontra vários' do
+   it 'e encontra por vários' do
     #Arrange
       user1 = User.create!(name: 'Matheus', email: 'matheuzin@gmail.com', password: 'senha_padrao')
       user2 = User.create!(name: 'Admin', email: 'admin@gmail.com', password: 'senha_padrao_admin')

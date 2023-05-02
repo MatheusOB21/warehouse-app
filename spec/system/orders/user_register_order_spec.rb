@@ -28,6 +28,7 @@ describe 'Usuário cadastra um pedido' do
       expect(page).to have_content 'Usuário responsável: Flavio'
       expect(page).to have_content 'Email do responsável: <flavio@funcionario.com.br>'
       expect(page).to have_content 'Data de entrega: 20/12/2024'
+      expect(page).to have_content 'Status do pedido: Pendente'
       
       expect(page).not_to have_content 'Fornecedor: Anakin LTDA'
       expect(page).not_to have_content 'Galpão destinado: Ceara Gate'

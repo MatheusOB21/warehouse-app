@@ -86,6 +86,7 @@ RSpec.describe Order, type: :model do
         #Act
         order2.save!
         result = order2.code
+        user.user_and_email
 
       #Assert
         expect(result).not_to eq order1.code

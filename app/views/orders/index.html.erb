@@ -1,13 +1,15 @@
 <% if @orders.present? %>
-<div id="result-order-serach">
+<div id="orders">
   <% @orders.each do |order|%>
     <dl>
       <dt><strong><%= Order.human_attribute_name(:code) %>:</strong></dt>
-      <dd><%= order.code %></dd>
+      <dd><%= link_to order.code, order %></dd>
       <dt><strong><%= Order.human_attribute_name(:warehouse_id) %>:</strong></dt>
       <dd><%= order.warehouse.description_full %></dd>
       <dt><strong><%= Order.human_attribute_name(:supplier_id) %>:</strong></dt>
       <dd><%= order.supplier.corporate_name %></dd>  
+      <dt><strong><%= Order.human_attribute_name(:status) %>:</strong></dt>
+      <dd><%= I18n.t(order.status) %></dd>  
     </dl>
   <% end %>
 <% else %>
