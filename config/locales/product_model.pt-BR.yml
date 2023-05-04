@@ -1,7 +1,7 @@
 pt-BR:
   activerecord:
     models:
-      user: Modelo de produto
+      product_model: Modelo de produto
     attributes:
       product_model:
         name: "Nome"

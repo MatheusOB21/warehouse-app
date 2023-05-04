@@ -20,6 +20,16 @@
      <dl> 
   </div>
   
+  <div>
+    <h4>Produtos do pedido:<h4>
+    <ul>
+    <% @order.order_items.each do |item| %>
+      <li><%= item.quantity %>x <%= item.product_model.name %> - <%= item.product_model.sku %></li>
+    <% end %>
+    </ul>
+    <%= link_to "Adicionar item", new_order_order_item_path(@order.id) %> 
+  </div>
+  
   <% if @order.pending? %>
     <div id = "status-button">
       <%= button_to "Pedido recebido", delivered_order_path(@order.id) %>

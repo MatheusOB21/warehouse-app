@@ -1,0 +1,9 @@
+pt-BR:
+  activerecord:
+    models:
+      order_item: Item do pedido
+    attributes:
+      order_item:
+        order: "Pedido"
+        product_model_id: "Modelo de produto"
+        quantity: "Quantidade"
