@@ -91,5 +91,20 @@ RSpec.describe Order, type: :model do
       #Assert
         expect(result).not_to eq order1.code
     end
+    
+    it 'e não pode mudar ao atualizar o pedido' do
+      #Arrange 
+        user = User.create!(name: 'Flavio', email: 'flavio@funcionario.com.br', password: 'flaviosoueu123')
+        warehouse = Warehouse.create!(name: 'Rio Gate', code: 'RDU', city: 'Rio de Janeiro', area: 60_000, adress: "Avenida das Palmeiras, 2500", cep: '61000-000', description: 'Galpão do Rio de Janeiro')
+        supplier = Supplier.create!(corporate_name: "Mistery Inc", brand_name: "Mistery", registration_number:"15225845612345", full_address: "Avenida Flamingos, 156", city: "New Orleans", state: "WS", email: "contato@mistery.com.br")
+        
+        order = Order.create!(user: user, warehouse: warehouse, supplier: supplier, date_delivery: "2024-01-01")
+        order_code = order.code
+      #Act
+        order.update!(date_delivery: 2.day.from_now)
+
+      #Assert
+        expect(order_code).to eq order.code
+    end
   end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_05_115243) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_05_123747) do
   create_table "order_items", force: :cascade do |t|
     t.integer "order_id", null: false
     t.integer "product_model_id", null: false
@@ -55,6 +55,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_05_115243) do
     t.string "serial_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "serial"
     t.index ["order_id"], name: "index_stock_products_on_order_id"
     t.index ["product_model_id"], name: "index_stock_products_on_product_model_id"
     t.index ["warehouse_id"], name: "index_stock_products_on_warehouse_id"

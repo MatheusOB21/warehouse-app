@@ -19,6 +19,13 @@
     </div>
     
     <div>
+        <h4>Produtos em Estoque:</h4>
+        <% @stocks.each_pair do |key, value| %>
+        <%= value %>x <%= key.name %>
+        <% end %>
+    <div>
+   
+    <div>
     <%= link_to "Editar", edit_warehouse_path(@warehouse.id) %>
     <%= button_to "Remover", warehouse_path(@warehouse.id), method: :delete %>
     </div>
